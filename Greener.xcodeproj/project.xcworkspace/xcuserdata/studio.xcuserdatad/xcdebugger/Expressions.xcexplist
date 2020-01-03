@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MainFeedTableViewController.reloadData():MainFeedTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "EditPostViewController.viewDidLoad():EditPostViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MainFeedTableViewController.prepare(for:sender:):MainFeedTableViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

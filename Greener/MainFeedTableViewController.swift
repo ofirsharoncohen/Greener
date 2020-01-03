@@ -9,91 +9,65 @@
 import UIKit
 
 class MainFeedTableViewController: UITableViewController {
-
-    @IBOutlet weak var SignoutButton: UIBarButtonItem!
+    
+    @IBOutlet weak var addNewPost: UIBarButtonItem!
+    @IBOutlet weak var LogOut: UIBarButtonItem!
     
     @IBAction func LogOut(_ sender: UIBarButtonItem) {
         
         self.navigationController?.popToRootViewController(animated: true)
     }
+    var observer:Any?;
+    
+    var data = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.leftBarButtonItem = SignoutButton;
+        //navigation.backBarButtonItem?.title = "LogOut"
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+        self.reloadData();
+        
+              
+   
+        
 
     // MARK: - Table view data source
-
+    }
+    func reloadData(){
+        let _data:[Post]? = Model.instance.getPosts()
+            if (_data != nil) {
+                self.data = _data!;
+            }
+        
+       }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+           return 1
+       }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+       override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return data.count
+       }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell:PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
 
-        // Configure the cell...
-
+        let post = data[indexPath.row]
+        cell.userName.text = post.userId
+        cell.postContent.text = post.content
+//        cell.postPic.image = UIImage(named: "scrnli")
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let cellBtn = sender as? UIButton {
+            let cell = cellBtn.superview?.superclass as? PostTableViewCell
+            let i = self.index(ofAccessibilityElement: cell)
+            if (segue.identifier == "EditPostSegue"){
+                let vc:EditPostViewController = segue.destination as! EditPostViewController
+                vc.post = data[i]
+            }
+        }
     }
-    */
-
 }

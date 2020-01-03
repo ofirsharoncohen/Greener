@@ -18,6 +18,9 @@
 		3DC8C18823BD228900C54C44 /* MainFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C18723BD228900C54C44 /* MainFeedTableViewController.swift */; };
 		3DC8C18A23BD285400C54C44 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */; };
 		3DC8C18C23BD2A3C00C54C44 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C18B23BD2A3C00C54C44 /* EditPostViewController.swift */; };
+		3DE147CF23BF3F2600DE50C4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE147CE23BF3F2600DE50C4 /* Post.swift */; };
+		3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE147D023BF4FBD00DE50C4 /* Model.swift */; };
+		3DE147D323BF669700DE50C4 /* scrnli.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DE147D223BF669700DE50C4 /* scrnli.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		3DC8C18723BD228900C54C44 /* MainFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewController.swift; sourceTree = "<group>"; };
 		3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3DC8C18B23BD2A3C00C54C44 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		3DE147CE23BF3F2600DE50C4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		3DE147D023BF4FBD00DE50C4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3DE147D223BF669700DE50C4 /* scrnli.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scrnli.png; path = ../../../Downloads/scrnli.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 		3DC8C16E23BD133000C54C44 /* Greener */ = {
 			isa = PBXGroup;
 			children = (
+				3DE147D223BF669700DE50C4 /* scrnli.png */,
+				3DE147CD23BF3ED300DE50C4 /* Model */,
 				3DC8C16F23BD133000C54C44 /* AppDelegate.swift */,
 				3DC8C17123BD133000C54C44 /* SceneDelegate.swift */,
 				3DC8C17323BD133000C54C44 /* ViewController.swift */,
@@ -80,6 +88,15 @@
 				3DC8C18B23BD2A3C00C54C44 /* EditPostViewController.swift */,
 			);
 			path = Greener;
+			sourceTree = "<group>";
+		};
+		3DE147CD23BF3ED300DE50C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DE147CE23BF3F2600DE50C4 /* Post.swift */,
+				3DE147D023BF4FBD00DE50C4 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +160,7 @@
 				3DC8C17C23BD133200C54C44 /* LaunchScreen.storyboard in Resources */,
 				3DC8C17923BD133200C54C44 /* Assets.xcassets in Resources */,
 				3DC8C17723BD133000C54C44 /* Main.storyboard in Resources */,
+				3DE147D323BF669700DE50C4 /* scrnli.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,7 +176,9 @@
 				3DC8C18C23BD2A3C00C54C44 /* EditPostViewController.swift in Sources */,
 				3DC8C17423BD133000C54C44 /* ViewController.swift in Sources */,
 				3DC8C18623BD1E2300C54C44 /* SignupViewController.swift in Sources */,
+				3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */,
 				3DC8C17023BD133000C54C44 /* AppDelegate.swift in Sources */,
+				3DE147CF23BF3F2600DE50C4 /* Post.swift in Sources */,
 				3DC8C18823BD228900C54C44 /* MainFeedTableViewController.swift in Sources */,
 				3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */,
 			);

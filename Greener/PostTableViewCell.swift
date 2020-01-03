@@ -12,7 +12,6 @@ class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var postPic: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    
     @IBOutlet weak var postContent: UILabel!
     
     override func awakeFromNib() {
@@ -20,16 +19,13 @@ class PostTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "StudentInfoSegue"){
-            let vc:StudentInfoViewController = segue.destination as! StudentInfoViewController
-            vc.student = selected
-        }
-    }
+    
+    
 
 }
