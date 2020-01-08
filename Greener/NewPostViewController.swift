@@ -1,29 +1,20 @@
 //
-//  EditPostViewController.swift
+//  NewPostViewController.swift
 //  Greener
 //
-//  Created by Studio on 01/01/2020.
+//  Created by Studio on 08/01/2020.
 //  Copyright © 2020 Studio. All rights reserved.
 //
 
 import UIKit
 
-class EditPostViewController: UIViewController {
+class NewPostViewController: UIViewController {
 
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var postPic: UIImageView!
-    @IBOutlet weak var contentPost: UITextView!
-   
-    var post:Post?
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        contentPost.text = post?.content
-        userName.text = post?.userId
-        //postPic.image = UIImage(named: "Recycle")
-    }
 
+        // Do any additional setup after loading the view.
+    }
     
 
     /*

@@ -24,7 +24,7 @@ class MainFeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //navigation.backBarButtonItem?.title = "LogOut"
+        
         
 
         self.reloadData();
@@ -60,14 +60,28 @@ class MainFeedTableViewController: UITableViewController {
         return cell
     }
 
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      //  if let cellBtn = sender as? UIButton {
+        //    let cell = cellBtn.superview?.superclass as? PostTableViewCell
+          //  let i = self.index(ofAccessibilityElement: cell)
+            //if (segue.identifier == "EditPostSegue"){
+              //  let vc:EditPostViewController = segue.destination as! //EditPostViewController
+   //             vc.post = data[i]
+     //       }
+       // }
+    //}
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let cellBtn = sender as? UIButton {
-            let cell = cellBtn.superview?.superclass as? PostTableViewCell
-            let i = self.index(ofAccessibilityElement: cell)
-            if (segue.identifier == "EditPostSegue"){
-                let vc:EditPostViewController = segue.destination as! EditPostViewController
-                vc.post = data[i]
-            }
+        if (segue.identifier == "InfoPostSegue"){
+            let vc:InfoViewController = segue.destination as! InfoViewController
+            vc.post = selected
         }
+    }
+    
+    var selected:Post?
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected = data[indexPath.row]
+        performSegue(withIdentifier: "InfoPostSegue", sender: self)
     }
 }

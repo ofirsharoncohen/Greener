@@ -10,6 +10,11 @@
       </ContextState>
       <ContextState
          contextName = "MainFeedTableViewController.prepare(for:sender:):MainFeedTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "vc">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>
