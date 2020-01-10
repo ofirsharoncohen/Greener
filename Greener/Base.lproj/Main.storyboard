@@ -40,7 +40,7 @@
                                     <segue destination="VfE-4M-gpo" kind="show" id="COk-5e-Apq"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="uqq-LO-JyW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Recycle.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uqq-LO-JyW">
                                 <rect key="frame" x="97" y="216" width="220" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -181,7 +181,11 @@
                                 <action selector="LogOut:" destination="FDH-A6-zs6" id="x8E-Be-jlK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="9HA-YJ-krF"/>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="9HA-YJ-krF">
+                            <connections>
+                                <segue destination="21a-TC-CjP" kind="show" id="Imh-9d-9QC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="LogOut" destination="Upa-C5-7MT" id="8vg-sV-na2"/>
@@ -225,6 +229,9 @@
                                 <rect key="frame" x="320" y="754" width="46" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="savePost:" destination="21a-TC-CjP" eventType="touchUpInside" id="D0a-04-XYZ"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke8-e7-ocF">
                                 <rect key="frame" x="328" y="413" width="30" height="30"/>
@@ -307,9 +314,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image.png" width="522" height="504"/>
+        <image name="Recycle.jpg" width="240" height="234.72000122070312"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="KEQ-mP-h8n"/>
         <segue reference="kLa-uw-SbY"/>
     </inferredMetricsTieBreakers>
 </document>

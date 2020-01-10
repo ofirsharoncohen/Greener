@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.navigationController?.isToolbarHidden = true
+//        self.navigationController?.isToolbarHidden = true
+        //set delay for segue to login
+        
     }
 
     

@@ -3,13 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11CE600DF223D7DA6B55ED91 /* Pods_Greener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2CAE39CE872CE17DA47422A /* Pods_Greener.framework */; };
 		3D00C23523C62B4600BDF468 /* Recycle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D00C23423C62B4600BDF468 /* Recycle.jpg */; };
 		3D00C23723C6452C00BDF468 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D00C23623C6452C00BDF468 /* InfoViewController.swift */; };
-		3D00C23923C65F0500BDF468 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D00C23823C65F0400BDF468 /* image.png */; };
+		3D559F3723C87BD70001954E /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F3623C87BD70001954E /* ModelFirebase.swift */; };
+		3D559F4123C884C00001954E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D559F4023C884BF0001954E /* GoogleService-Info.plist */; };
+		3D559F4323C88D250001954E /* Post+Sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4223C88D250001954E /* Post+Sql.swift */; };
+		3D559F4823C890CD0001954E /* ModelSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4723C890CD0001954E /* ModelSql.swift */; };
+		3D559F4A23C894060001954E /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4923C894060001954E /* FirebaseStorage.swift */; };
+		3D559F4C23C896E80001954E /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4B23C896E80001954E /* Post+Firebase.swift */; };
 		3DC8C17023BD133000C54C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C16F23BD133000C54C44 /* AppDelegate.swift */; };
 		3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C17123BD133000C54C44 /* SceneDelegate.swift */; };
 		3DC8C17423BD133000C54C44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C17323BD133000C54C44 /* ViewController.swift */; };
@@ -24,10 +30,31 @@
 		3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE147D023BF4FBD00DE50C4 /* Model.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3D559F3F23C8832D0001954E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3AA60160D1414E8217600475 /* Pods-Greener.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Greener.debug.xcconfig"; path = "Target Support Files/Pods-Greener/Pods-Greener.debug.xcconfig"; sourceTree = "<group>"; };
 		3D00C23423C62B4600BDF468 /* Recycle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Recycle.jpg; sourceTree = "<group>"; };
 		3D00C23623C6452C00BDF468 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		3D00C23823C65F0400BDF468 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../../Downloads/image.png; sourceTree = "<group>"; };
+		3D559F3623C87BD70001954E /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		3D559F4023C884BF0001954E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D559F4223C88D250001954E /* Post+Sql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Sql.swift"; sourceTree = "<group>"; };
+		3D559F4423C88DBF0001954E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3D559F4623C88FA30001954E /* Greener-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Greener-Bridging-Header.h"; sourceTree = "<group>"; };
+		3D559F4723C890CD0001954E /* ModelSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql.swift; sourceTree = "<group>"; };
+		3D559F4923C894060001954E /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
+		3D559F4B23C896E80001954E /* Post+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Firebase.swift"; sourceTree = "<group>"; };
 		3DC8C16C23BD133000C54C44 /* Greener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC8C16F23BD133000C54C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC8C17123BD133000C54C44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +69,8 @@
 		3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		3DE147CE23BF3F2600DE50C4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3DE147D023BF4FBD00DE50C4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7C7F99FA16C073FD2FAA74D5 /* Pods-Greener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Greener.release.xcconfig"; path = "Target Support Files/Pods-Greener/Pods-Greener.release.xcconfig"; sourceTree = "<group>"; };
+		C2CAE39CE872CE17DA47422A /* Pods_Greener.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Greener.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CE600DF223D7DA6B55ED91 /* Pods_Greener.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +90,8 @@
 			children = (
 				3DC8C16E23BD133000C54C44 /* Greener */,
 				3DC8C16D23BD133000C54C44 /* Products */,
+				61FDFEA6E01BD9C4823FB469 /* Pods */,
+				472E459DF291F1239691A478 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,8 +106,8 @@
 		3DC8C16E23BD133000C54C44 /* Greener */ = {
 			isa = PBXGroup;
 			children = (
+				3D559F4023C884BF0001954E /* GoogleService-Info.plist */,
 				3D00C23423C62B4600BDF468 /* Recycle.jpg */,
-				3D00C23823C65F0400BDF468 /* image.png */,
 				3DE147CD23BF3ED300DE50C4 /* Model */,
 				3DC8C16F23BD133000C54C44 /* AppDelegate.swift */,
 				3DC8C17123BD133000C54C44 /* SceneDelegate.swift */,
@@ -89,6 +121,7 @@
 				3DC8C18723BD228900C54C44 /* MainFeedTableViewController.swift */,
 				3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */,
 				3D00C23623C6452C00BDF468 /* InfoViewController.swift */,
+				3D559F4623C88FA30001954E /* Greener-Bridging-Header.h */,
 			);
 			path = Greener;
 			sourceTree = "<group>";
@@ -98,8 +131,31 @@
 			children = (
 				3DE147CE23BF3F2600DE50C4 /* Post.swift */,
 				3DE147D023BF4FBD00DE50C4 /* Model.swift */,
+				3D559F3623C87BD70001954E /* ModelFirebase.swift */,
+				3D559F4223C88D250001954E /* Post+Sql.swift */,
+				3D559F4723C890CD0001954E /* ModelSql.swift */,
+				3D559F4923C894060001954E /* FirebaseStorage.swift */,
+				3D559F4B23C896E80001954E /* Post+Firebase.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		472E459DF291F1239691A478 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D559F4423C88DBF0001954E /* libsqlite3.0.tbd */,
+				C2CAE39CE872CE17DA47422A /* Pods_Greener.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61FDFEA6E01BD9C4823FB469 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AA60160D1414E8217600475 /* Pods-Greener.debug.xcconfig */,
+				7C7F99FA16C073FD2FAA74D5 /* Pods-Greener.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DC8C18023BD133200C54C44 /* Build configuration list for PBXNativeTarget "Greener" */;
 			buildPhases = (
+				0D9877B6A3F233EFF3ECED34 /* [CP] Check Pods Manifest.lock */,
 				3DC8C16823BD133000C54C44 /* Sources */,
 				3DC8C16923BD133000C54C44 /* Frameworks */,
 				3DC8C16A23BD133000C54C44 /* Resources */,
+				C4BA2B98B177BCF2AB04D6F7 /* [CP] Embed Pods Frameworks */,
+				3D559F3F23C8832D0001954E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,13 +221,55 @@
 			files = (
 				3DC8C17C23BD133200C54C44 /* LaunchScreen.storyboard in Resources */,
 				3D00C23523C62B4600BDF468 /* Recycle.jpg in Resources */,
+				3D559F4123C884C00001954E /* GoogleService-Info.plist in Resources */,
 				3DC8C17923BD133200C54C44 /* Assets.xcassets in Resources */,
 				3DC8C17723BD133000C54C44 /* Main.storyboard in Resources */,
-				3D00C23923C65F0500BDF468 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D9877B6A3F233EFF3ECED34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Greener-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4BA2B98B177BCF2AB04D6F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Greener/Pods-Greener-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Greener/Pods-Greener-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Greener/Pods-Greener-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3DC8C16823BD133000C54C44 /* Sources */ = {
@@ -179,12 +280,17 @@
 				3D00C23723C6452C00BDF468 /* InfoViewController.swift in Sources */,
 				3DC8C18423BD18DC00C54C44 /* LoginViewController.swift in Sources */,
 				3DC8C17423BD133000C54C44 /* ViewController.swift in Sources */,
+				3D559F4A23C894060001954E /* FirebaseStorage.swift in Sources */,
 				3DC8C18623BD1E2300C54C44 /* SignupViewController.swift in Sources */,
 				3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */,
 				3DC8C17023BD133000C54C44 /* AppDelegate.swift in Sources */,
+				3D559F3723C87BD70001954E /* ModelFirebase.swift in Sources */,
 				3DE147CF23BF3F2600DE50C4 /* Post.swift in Sources */,
 				3DC8C18823BD228900C54C44 /* MainFeedTableViewController.swift in Sources */,
+				3D559F4323C88D250001954E /* Post+Sql.swift in Sources */,
 				3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */,
+				3D559F4823C890CD0001954E /* ModelSql.swift in Sources */,
+				3D559F4C23C896E80001954E /* Post+Firebase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,9 +432,14 @@
 		};
 		3DC8C18123BD133200C54C44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA60160D1414E8217600475 /* Pods-Greener.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseAnalytics/Frameworks",
+				);
 				INFOPLIST_FILE = Greener/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +447,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BarAndOfir.Greener;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Greener/Greener-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Greener/Greener-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -343,9 +456,14 @@
 		};
 		3DC8C18223BD133200C54C44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C7F99FA16C073FD2FAA74D5 /* Pods-Greener.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseAnalytics/Frameworks",
+				);
 				INFOPLIST_FILE = Greener/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -353,6 +471,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = BarAndOfir.Greener;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Greener/Greener-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Greener/Greener-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

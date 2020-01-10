@@ -14,6 +14,7 @@ class Post {
     var userId:String = ""
     var content:String = ""
     var pic:String = ""
+    var lastUpdate: Int64?
     
     init(id:String, userId:String, content:String, pic:String){
         self.id = id
@@ -22,19 +23,9 @@ class Post {
         self.pic = pic
     }
     
-    init(json:[String:Any]){
-        self.id = json["id"] as! String;
-        self.userId = json["userId"] as! String;
-        self.content = json["content"] as! String;
-        self.pic = json["pic"] as! String;
+    init (id:String)
+    {
+        self.id = id
     }
     
-    func toJson() -> [String:String] {
-        var json = [String:String]();
-        json["id"] = id
-        json["userId"] = userId
-        json["content"] = content
-        json["pic"] = pic
-        return json;
-    }
 }

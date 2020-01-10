@@ -7,12 +7,97 @@
 //
 
 import Foundation
+import UIKit
+import Firebase
 
-class Model{
+class Model {
     static let instance = Model()
     
-    func getPosts()->[Post]?{
-       let posts = [Post(id:"1234" , userId: "user1", content:"content", pic: "picURL"),Post(id:"34" , userId: "user2", content:"content2", pic: "pic2URL")]
-    return posts
+    var modelFirebase:ModelFirebase = ModelFirebase()
+    
+    private init(){
+    }
+    
+    func add(post:Post){
+        modelFirebase.add(post: post);
+    }
+    
+    func getAllPosts(callback:@escaping ([Post]?)->Void){
+        
+        //get the local last update date
+        let lud = Post.getLastUpdateDate();
+        
+        //get the cloud updates since the local update date
+        modelFirebase.getAllPosts(since:lud) { (data) in
+            //insert update to the local db
+            var lud:Int64 = 0;
+            if(data != nil){
+                for post in data!{
+                    post.addToDb()
+                    if post.lastUpdate! > lud {lud = post.lastUpdate!}
+                }
+            }
+            //update the students local last update date
+            Post.setLastUpdate(lastUpdated: lud)
+            // get the complete student list
+            let finalData = Post.getAllPostsFromDb()
+            callback(finalData);
+        }
+    }
+
+    func saveImage(image:UIImage, callback:@escaping (String)->Void) {
+        FirebaseStorage.saveImage(image: image, callback: callback)
+    }
+    
+}
+class ModelEvents{
+    static let PostDataEvent = EventNotificationBase(eventName: "Greener.PostDataEvent");
+    static let LoggingStateChangeEvent = EventNotificationBase(eventName: "Greener.LoggingStateChangeEvent");
+    
+    static let CommentsDataEvent = StringEventNotificationBase<String>(eventName: "Greener.CommentsDataEvent");
+    private init(){}
+}
+
+class EventNotificationBase{
+    let eventName:String;
+    
+    init(eventName:String){
+        self.eventName = eventName;
+    }
+    
+    func observe(callback:@escaping ()->Void){
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(eventName),
+                                               object: nil, queue: nil) { (data) in
+                                                callback();
+        }
+    }
+    
+    func post(){
+        NotificationCenter.default.post(name: NSNotification.Name(eventName),
+                                        object: self,
+                                        userInfo: nil);
     }
 }
+
+class StringEventNotificationBase<T>{
+    let eventName:String;
+    
+    init(eventName:String){
+        self.eventName = eventName;
+    }
+    
+    func observe(callback:@escaping (T)->Void){
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(eventName),
+                                               object: nil, queue: nil) { (data) in
+                                                let strData = data.userInfo!["data"] as! T
+                                                callback(strData);
+        }
+    }
+    
+func post(data:T){
+        NotificationCenter.default.post(name: NSNotification.Name(eventName),
+                                        object: self,
+                                        userInfo: ["data":data]);
+    }
+}
+

@@ -22,6 +22,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var post:Post?
     var userId:String?
+    var isNew:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,13 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     
-
+    @IBAction func savePost(_ sender: Any) {
+        if(isNew){
+            post = Post(id: "123", userId: "bar", content: postContent.text, pic: "pic")
+            Model.instance.add(post: post!)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

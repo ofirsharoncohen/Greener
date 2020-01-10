@@ -23,24 +23,26 @@ class MainFeedTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         
-        
-
+        ModelEvents.PostDataEvent.observe {
+            self.refreshControl?.beginRefreshing()
+            self.reloadData();
+        }
+        self.refreshControl?.beginRefreshing()
         self.reloadData();
-        
-              
-   
-        
-
     // MARK: - Table view data source
     }
-    func reloadData(){
-        let _data:[Post]? = Model.instance.getPosts()
+    @objc func reloadData(){
+        print("========== reloading posts data ==========")
+        Model.instance.getAllPosts{(_data:[Post]?) in
             if (_data != nil) {
-                self.data = _data!;
-            }
-        
+                           self.data = _data!;
+                           self.tableView.reloadData();
+                       }
+                       self.refreshControl?.endRefreshing()
+                   };
        }
     override func numberOfSections(in tableView: UITableView) -> Int {
            return 1
