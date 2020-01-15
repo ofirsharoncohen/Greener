@@ -17,7 +17,7 @@ class Post {
     var lastUpdate: Int64?
     
     init(id:String, userId:String, content:String, pic:String){
-        self.id = id
+        self.id = UUID().uuidString
         self.userId = userId
         self.content = content
         self.pic = pic
@@ -25,7 +25,8 @@ class Post {
     
     init (id:String)
     {
-        self.id = id
+        self.userId = id
+        self.id = UUID().uuidString
     }
     
 }

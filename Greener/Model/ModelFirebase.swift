@@ -24,16 +24,10 @@ class ModelFirebase{
                 ModelEvents.PostDataEvent.post();
             }
         }
-//        ref = db.collection("students").addDocument(data: json, completion: { err in
-//                if let err = err {
-//                    print("Error adding document: \(err)")
-//                } else {
-//                    print("Document added with ID: \(ref!.documentID)")
-//                    ModelEvents.StudentDataEvent.post();
-//                }
-//        })
     }
     
+    lazy var storageRef = Storage.storage().reference(forURL:
+    "gs://greener-c532e.appspot.com")
     
     //TODO: implement since
     func getAllPosts(since:Int64, callback: @escaping ([Post]?)->Void){
@@ -50,7 +44,6 @@ class ModelFirebase{
                         print("\(tsDate)");
                         let tsDouble = tsDate.timeIntervalSince1970;
                         print("\(tsDouble)");
-
                     }
                     data.append(Post(json: document.data()));
                 }

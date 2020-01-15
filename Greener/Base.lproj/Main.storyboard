@@ -263,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceM-3P-cKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489.8550724637682" y="908.70535714285711"/>
+            <point key="canvasLocation" x="1486" y="900"/>
         </scene>
         <!--Signup-->
         <scene sceneID="Zp5-L9-BMe">
@@ -318,6 +318,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KEQ-mP-h8n"/>
-        <segue reference="kLa-uw-SbY"/>
+        <segue reference="otO-78-Md5"/>
     </inferredMetricsTieBreakers>
 </document>

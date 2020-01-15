@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "static FirebaseStorage.saveImage(image:callback:):FirebaseStorage.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "imageRef.downloadURL">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
