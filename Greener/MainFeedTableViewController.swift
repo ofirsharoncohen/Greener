@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Kingfisher
+import Firebase
 
 class MainFeedTableViewController: UITableViewController {
     
@@ -18,7 +20,7 @@ class MainFeedTableViewController: UITableViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     var observer:Any?;
-    
+    var handle: AuthStateDidChangeListenerHandle?
     var data = [Post]()
     
     override func viewDidLoad() {
@@ -34,6 +36,22 @@ class MainFeedTableViewController: UITableViewController {
         self.reloadData();
     // MARK: - Table view data source
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated);
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+          // ...
+        }
+       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      // [START remove_auth_listener]
+      Auth.auth().removeStateDidChangeListener(handle!)
+      // [END remove_auth_listener]
+    }
+    
     @objc func reloadData(){
         print("========== reloading posts data ==========")
         Model.instance.getAllPosts{(_data:[Post]?) in
@@ -58,25 +76,25 @@ class MainFeedTableViewController: UITableViewController {
         let post = data[indexPath.row]
         cell.userName.text = post.userId
         cell.postContent.text = post.content
-//        cell.postPic.image = UIImage(named: "scrnli")
+      //  cell.postPic.image = UIImage(named: "pic")
+        if post.pic != "" {
+            cell.postPic.kf.setImage(with: URL(string: post.pic));
+        }
         return cell
     }
-
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      //  if let cellBtn = sender as? UIButton {
-        //    let cell = cellBtn.superview?.superclass as? PostTableViewCell
-          //  let i = self.index(ofAccessibilityElement: cell)
-            //if (segue.identifier == "EditPostSegue"){
-              //  let vc:EditPostViewController = segue.destination as! //EditPostViewController
-   //             vc.post = data[i]
-     //       }
-       // }
-    //}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "InfoPostSegue"){
             let vc:InfoViewController = segue.destination as! InfoViewController
             vc.post = selected
+            if (vc.post?.userId == selected?.userId)
+            {
+                vc.isEditable = true
+            }
+        }
+        else if (segue.identifier == "NewPost"){
+            let vc:InfoViewController = segue.destination as! InfoViewController
+            vc.isNew = true
         }
     }
     

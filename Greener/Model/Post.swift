@@ -25,8 +25,8 @@ class Post {
     
     init (id:String)
     {
-        self.userId = id
-        self.id = UUID().uuidString
+        //self.userId = id
+        self.id = id//UUID().uuidString
     }
     
 }

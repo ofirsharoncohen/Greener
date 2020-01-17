@@ -14,7 +14,7 @@ class ModelSql{
     var database: OpaquePointer? = nil
     
     private init() {
-        let dbFileName = "database2.db"
+        let dbFileName = "database3.db"
         if let dir = FileManager.default.urls(for: .documentDirectory, in:
             .userDomainMask).first{
             let path = dir.appendingPathComponent(dbFileName)
@@ -50,7 +50,9 @@ class ModelSql{
                 print("new row added succefully")
             }
         }
+        print("=========FINALIZING========")
         sqlite3_finalize(sqlite3_stmt)
+        print("=========DONE========")
     }
     
     func getLastUpdateDate(name:String)->Int64{
