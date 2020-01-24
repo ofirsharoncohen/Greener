@@ -39,6 +39,15 @@ class ModelSql{
             return
         }
     }
+    
+    func clear(){
+        var errormsg: UnsafeMutablePointer<Int8>? = nil
+        let res = sqlite3_exec(database, "DELETE * FROM POSTS ", nil, nil, &errormsg);
+        if(res != 0){
+            print("error creating table");
+            return
+        }
+    }
 
     func setLastUpdate(name:String, lastUpdated:Int64){
         var sqlite3_stmt: OpaquePointer? = nil

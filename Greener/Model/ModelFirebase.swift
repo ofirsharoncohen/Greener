@@ -26,6 +26,21 @@ class ModelFirebase{
         }
     }
     
+    func remove(post:Post){
+       //let uid = FIRAuth.auth()!.currentUser!.uid
+        let db = Firestore.firestore()
+
+        // Remove the post from the DB
+        db.collection("posts").document(post.id).delete(){ error in
+          if error != nil {
+              print("error \(error)")
+          }
+        }
+        // Remove the image from storage
+      
+        
+        }
+    
     lazy var storageRef = Storage.storage().reference(forURL:
     "gs://greener-c532e.appspot.com")
     

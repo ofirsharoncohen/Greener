@@ -22,10 +22,18 @@ class Model {
         modelFirebase.add(post: post);
     }
     
+    func remove(post:Post)
+    {
+        post.Remove();
+    }
+    
     func getAllPosts(callback:@escaping ([Post]?)->Void){
         
         //get the local last update date
         let lud = Post.getLastUpdateDate();
+        
+        // delete the posts table
+        Post.ClearTable();
         
         //get the cloud updates since the local update date
         modelFirebase.getAllPosts(since:lud) { (data) in

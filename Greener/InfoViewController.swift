@@ -33,20 +33,17 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         UserName.text = post?.userId
         postContent.text = post?.content
-       // postPic.image = UIImage(named: "pic")
-        
+        if post?.pic != "" && ((post?.pic) != nil) {
+            postPic.kf.setImage(with: URL(string: post!.pic));
+        }
         
         //remove keyboard from view on tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-
+        
         if (isNew || isEditable)
         {
             EditPost()
-        }
-        else
-        {
-            InfoPostNav.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(EditPost))
         }
     }
     //Calls this function when the tap is recognized.
@@ -66,40 +63,55 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    @IBAction func DeletePic(_ sender: Any) {
+        self.postPic.image = nil;
+        selectedImage = nil
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage;
         self.postPic.image = selectedImage;
+        removePhoto.isHidden = false
         dismiss(animated: true, completion: nil);
     }
     
     @objc func  EditPost()  {
         postContent.isEditable = true
         InfoPostNav.title = "New Post"
-        postContent.text = "description"
-        removePhoto.isHidden = false
+        //postContent.pl = "description"
+        removePhoto.isHidden = true
         SavePost.isHidden = false
         UploadPhoto.isHidden = false
         postId = UUID().uuidString
+        UserName.text = userId
         
         if (isEditable)
         {
             if post!.pic != "" {
-                postPic.kf.setImage(with: URL(string: post!.pic));
+                removePhoto.isHidden = false
             }
             postId = post?.id
             InfoPostNav.title = "Edit"
             postContent.text = post?.content;
         }
     }
-
+    
     func UpdateImagePath(path:String){
         picPath = path;
     }
     
     @IBAction func savePost(_ sender: Any) {
+        SavePost.isEnabled = false
+        if self.postContent.text == "" {
+            let alert = UIAlertController(title: "error", message: "Post can't be empty", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            SavePost.isEnabled = true
+            return
+        }
         let NewPost = Post(id:postId!);// self.UserName.text!);
         NewPost.content = self.postContent.text!
+        NewPost.userId = self.userId!
         guard let selectedImage = selectedImage else {
             Model.instance.add(post: NewPost);
             self.navigationController?.popViewController(animated: true);
@@ -113,14 +125,14 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-//    @IBAction func savePost(_ sender: Any) {
-//        if(isNew){
-//            if let image = selectedImage{
-//                Model.instance.saveImage(image: image, callback: UpdateImagePath)
-//            }
-//            post = Post(id: "123", userId: "bar", content: postContent.text, pic: "pic")
-//            Model.instance.add(post: post!)
-//        }
-//    }
-//
+    //    @IBAction func savePost(_ sender: Any) {
+    //        if(isNew){
+    //            if let image = selectedImage{
+    //                Model.instance.saveImage(image: image, callback: UpdateImagePath)
+    //            }
+    //            post = Post(id: "123", userId: "bar", content: postContent.text, pic: "pic")
+    //            Model.instance.add(post: post!)
+    //        }
+    //    }
+    //
 }
