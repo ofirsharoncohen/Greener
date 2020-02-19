@@ -22,39 +22,38 @@ class Model {
         modelFirebase.add(post: post);
     }
     
-    func remove(post:Post, callback: @escaping (Error?)->Void)
-    {
-        modelFirebase.remove(post: post){err in
+    func remove(post:Post, callback: @escaping (Error?)->Void){
+        modelFirebase.remove(post: post){ err in
             callback(err);
         }
     }
     
     func getAllPosts(callback:@escaping ([Post]?)->Void){
-        
         //get the local last update date
         let lud = Post.getLastUpdateDate();
-        
         // delete the posts table
-        Post.ClearTable();
-        
-        //get the cloud updates since the local update date
-        modelFirebase.getAllPosts(since:lud) { (data) in
-            //insert update to the local db
-            var lud:Int64 = 0;
-            if(data != nil){
-                for post in data!{
-                    post.addToDb()
-                    if post.lastUpdate! > lud {lud = post.lastUpdate!}
+        Post.ClearTable(){() in
+            //
+            //get the cloud updates since the local update date
+            self.modelFirebase.getAllPosts(since:lud) { (data) in
+                //insert update to the local db
+                var lud:Int64 = 0;
+                if(data != nil){
+                    for post in data!{
+                        post.addToDb()
+                        if post.lastUpdate! > lud {lud = post.lastUpdate!}
+                    }
                 }
-            }
-            //update the students local last update date
-            Post.setLastUpdate(lastUpdated: lud)
-            // get the complete student list
-            let finalData = Post.getAllPostsFromDb()
-            callback(finalData);
+                //update the students local last update date
+                Post.setLastUpdate(lastUpdated: lud)
+                // get the complete student list
+                let finalData = Post.getAllPostsFromDb()
+                callback(finalData);
+                //
+            };
         }
     }
-
+    
     func saveImage(image:UIImage, postId: String, callback:@escaping (String)->Void) {
         FirebaseStorage.saveImage(image: image,postId: postId, callback: callback)
     }
@@ -87,6 +86,9 @@ class EventNotificationBase{
                                         object: self,
                                         userInfo: nil);
     }
+    func remove(){
+        NotificationCenter.default.post(name: NSNotification.Name(eventName), object: self, userInfo: nil);
+    }
 }
 
 class StringEventNotificationBase<T>{
@@ -104,7 +106,7 @@ class StringEventNotificationBase<T>{
         }
     }
     
-func post(data:T){
+    func post(data:T){
         NotificationCenter.default.post(name: NSNotification.Name(eventName),
                                         object: self,
                                         userInfo: ["data":data]);
