@@ -251,12 +251,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3z-RJ-Dx3">
+                                <rect key="frame" x="349" y="101" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deletePost:" destination="21a-TC-CjP" eventType="touchUpInside" id="mdp-P9-P4u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ee9-tv-f3g"/>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="gYP-L8-xoK"/>
                     <connections>
+                        <outlet property="DeletePost" destination="B3z-RJ-Dx3" id="OaC-dW-fdS"/>
                         <outlet property="InfoPostNav" destination="gYP-L8-xoK" id="lGd-f7-38A"/>
                         <outlet property="SavePost" destination="IdH-7f-5Jc" id="Qf4-QJ-ihG"/>
                         <outlet property="UploadPhoto" destination="ke8-e7-ocF" id="vbW-Ki-VZE"/>

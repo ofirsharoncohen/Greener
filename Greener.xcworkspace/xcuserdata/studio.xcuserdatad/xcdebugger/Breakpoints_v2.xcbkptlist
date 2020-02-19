@@ -55,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA025446-15E5-4B7B-8C74-7C85827C6C60"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greener/InfoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "InfoViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DB052A3C-D656-47C2-A0E6-7DE864CDDF7F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -112,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "getAllPostsFromDb()"
+            landmarkName = "Remove()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -130,54 +114,6 @@
             endingLineNumber = "23"
             landmarkName = "addToDb()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8795BF3C-8745-47D2-9FE2-FF46EACB748F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greener/InfoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "savePost(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8795BF3C-8745-47D2-9FE2-FF46EACB748F - 8cbab9f7d472e978"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greener.InfoViewController.savePost(Any) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/InfoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "1143">
-               </Location>
-               <Location
-                  uuid = "8795BF3C-8745-47D2-9FE2-FF46EACB748F - 39a09b265674c02e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in Greener.InfoViewController.savePost(Any) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/InfoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "135">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -311,70 +247,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5690CBFB-45FE-499B-9A43-DEBFF2AF24AB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greener/InfoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "savePost(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5690CBFB-45FE-499B-9A43-DEBFF2AF24AB - 8cbab9f7d472e978"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greener.InfoViewController.savePost(Any) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/InfoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "1143">
-               </Location>
-               <Location
-                  uuid = "5690CBFB-45FE-499B-9A43-DEBFF2AF24AB - 39a09b265674c02e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in Greener.InfoViewController.savePost(Any) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/InfoViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "135">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B33D19D-C715-46CF-A15B-5F7D914379F3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greener/MainFeedTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A78F0508-84CB-49AF-BF07-68DDD85BB068"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -400,7 +272,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
-            landmarkName = "viewWillDisappear(_:)"
+            landmarkName = "reloadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -416,7 +288,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "viewWillDisappear(_:)"
+            landmarkName = "reloadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -432,7 +304,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "reloadData()"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -448,40 +320,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "getAllPosts(callback:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "977FD4FA-A2BF-4456-996D-60C3A3060B80 - 9574120dea099ecf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greener.Model.getAllPosts(callback: (Swift.Optional&lt;Swift.Array&lt;Greener.Post&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/Model/Model.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  uuid = "977FD4FA-A2BF-4456-996D-60C3A3060B80 - da1fe7bfe527b462"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Greener.Post&gt;&gt;) -&gt; () in Greener.Model.getAllPosts(callback: (Swift.Optional&lt;Swift.Array&lt;Greener.Post&gt;&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/Model/Model.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "170">
-               </Location>
-            </Locations>
+            landmarkName = "Model"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -496,7 +336,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "getAllPostsFromDb()"
+            landmarkName = "Remove()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -512,24 +352,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
             endingLineNumber = "101"
-            landmarkName = "savePost(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "23440D93-11D8-4696-8A07-0750050454B1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Greener/Model/Post+Sql.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "getAllPostsFromDb()"
-            landmarkType = "7">
+            landmarkName = "InfoViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -544,7 +368,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "EditPost()"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -562,38 +386,6 @@
             endingLineNumber = "52"
             landmarkName = "RegisterUser(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "17B9F626-3088-4D33-93BD-88E316729946 - df8885996fcc7495"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Greener.SignupViewController.RegisterUser(Any) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/SignupViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "3611">
-               </Location>
-               <Location
-                  uuid = "17B9F626-3088-4D33-93BD-88E316729946 - 27a005fbb2ae6db0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Greener.SignupViewController.RegisterUser(Any) -&gt; ()"
-                  moduleName = "Greener"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/studio/Desktop/Greener/Greener/Greener/SignupViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "190">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -673,6 +465,102 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "RegisterUser(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3EFE1F04-8415-4127-AF71-26F7F6E14CBA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greener/Model/ModelFirebase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "remove(post:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3EFE1F04-8415-4127-AF71-26F7F6E14CBA - 6c3991a71fa5a2c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Greener.ModelFirebase.remove(post: Greener.Post, callback: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Greener"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studio/Desktop/greener/Greener/Greener/Model/ModelFirebase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "121">
+               </Location>
+               <Location
+                  uuid = "3EFE1F04-8415-4127-AF71-26F7F6E14CBA - d46236d0e1f44642"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Greener.ModelFirebase.remove(post: Greener.Post, callback: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Greener"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/studio/Desktop/greener/Greener/Greener/Model/ModelFirebase.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9AF665B-F3C2-4FE7-856E-CF15D2E460DF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greener/Model/ModelFirebase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "remove(post:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6870BF4-5F08-404A-98D5-EA684D17ABC5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greener/Model/ModelFirebase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "remove(post:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F4E0B6A-048C-48E9-ABCB-9F6D28F335E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Greener/Model/ModelFirebase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "remove(post:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

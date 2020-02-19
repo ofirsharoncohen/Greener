@@ -15,6 +15,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var postPic: UIImageView!
     @IBOutlet weak var postContent: UITextView!
     
+    @IBOutlet weak var DeletePost: UIButton!
     @IBOutlet weak var SavePost: UIButton!
     @IBOutlet weak var removePhoto: UIButton!
     @IBOutlet weak var UploadPhoto: UIButton!
@@ -81,6 +82,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //postContent.pl = "description"
         removePhoto.isHidden = true
         SavePost.isHidden = false
+        
         UploadPhoto.isHidden = false
         postId = UUID().uuidString
         UserName.text = userId
@@ -90,6 +92,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             if post!.pic != "" {
                 removePhoto.isHidden = false
             }
+            DeletePost.isHidden = false
             postId = post?.id
             InfoPostNav.title = "Edit"
             postContent.text = post?.content;
@@ -98,6 +101,21 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func UpdateImagePath(path:String){
         picPath = path;
+    }
+    
+    @IBAction func deletePost(_ sender: Any) {
+        DeletePost.isEnabled = false
+        let OldPost = Post(id:postId!);// self.UserName.text!);
+        OldPost.pic = picPath ?? nil;
+        Model.instance.remove(post: OldPost){ error in
+            if(error != nil){
+                let alert = UIAlertController(title: "error", message: "Error: \(error.debugDescription)", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+                self.navigationController?.popViewController(animated: true);
+            }
+        };
     }
     
     @IBAction func savePost(_ sender: Any) {
@@ -125,14 +143,5 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    //    @IBAction func savePost(_ sender: Any) {
-    //        if(isNew){
-    //            if let image = selectedImage{
-    //                Model.instance.saveImage(image: image, callback: UpdateImagePath)
-    //            }
-    //            post = Post(id: "123", userId: "bar", content: postContent.text, pic: "pic")
-    //            Model.instance.add(post: post!)
-    //        }
-    //    }
-    //
+    
 }

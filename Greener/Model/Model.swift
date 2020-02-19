@@ -22,9 +22,11 @@ class Model {
         modelFirebase.add(post: post);
     }
     
-    func remove(post:Post)
+    func remove(post:Post, callback: @escaping (Error?)->Void)
     {
-        post.Remove();
+        modelFirebase.remove(post: post){err in
+            callback(err);
+        }
     }
     
     func getAllPosts(callback:@escaping ([Post]?)->Void){
