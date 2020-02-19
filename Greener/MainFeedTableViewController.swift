@@ -16,15 +16,6 @@ class MainFeedTableViewController: UITableViewController {
     @IBOutlet weak var LogOut: UIBarButtonItem!
     var user: String = ""
     
-    @IBAction func LogOut(_ sender: UIBarButtonItem) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        self.navigationController?.popToRootViewController(animated: true)
-    }
     var observer:Any?;
     var handle: AuthStateDidChangeListenerHandle?
     var data = [Post]()
@@ -46,7 +37,11 @@ class MainFeedTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            self.user = (user?.email)!
+            if (user != nil){
+                self.user = (user?.email)!;
+            }else{
+                self.user = "";
+            }
         }
         
     }
@@ -85,10 +80,14 @@ class MainFeedTableViewController: UITableViewController {
         //  cell.postPic.image = UIImage(named: "pic")
         if post.pic != "" && post.pic != nil {
             cell.postPic.kf.setImage(with: URL(string: post.pic));
+        }else {
+            let dafaultPicURL: String = "";
+            cell.postPic.kf.setImage(with: URL(string: dafaultPicURL))
         }
         return cell
     }
     
+    var selected:Post?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "InfoPostSegue"){
             let vc:InfoViewController = segue.destination as! InfoViewController
@@ -106,10 +105,18 @@ class MainFeedTableViewController: UITableViewController {
         }
     }
     
-    var selected:Post?
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selected = data[indexPath.row]
         performSegue(withIdentifier: "InfoPostSegue", sender: self)
+    }
+    
+    @IBAction func LogOut(_ sender: UIBarButtonItem) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
