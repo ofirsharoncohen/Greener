@@ -42,9 +42,9 @@ class ModelSql{
     
     func clear(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        let res = sqlite3_exec(database, "DELETE * FROM POSTS ", nil, nil, &errormsg);
+        let res = sqlite3_exec(database, "DELETE FROM POSTS WHERE true", nil, nil, &errormsg);
         if(res != 0){
-            print("error creating table");
+            print("error clearing table");
             return
         }
     }
