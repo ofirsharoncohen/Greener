@@ -42,8 +42,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        if (isNew || isEditable)
-        {
+        if (isNew || isEditable){
             EditPost()
         }
     }
@@ -130,11 +129,12 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NewPost.content = self.postContent.text!
         NewPost.userId = self.userId!
         guard let selectedImage = selectedImage else {
+            //if there is no image
             Model.instance.add(post: NewPost);
             self.navigationController?.popViewController(animated: true);
             return;
         }
-        
+        //if there is an image for this post
         Model.instance.saveImage(image: selectedImage, postId: NewPost.id) { (url) in
             NewPost.pic = url;
             Model.instance.add(post: NewPost);
