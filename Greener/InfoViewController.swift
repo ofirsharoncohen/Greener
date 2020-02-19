@@ -105,9 +105,8 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func deletePost(_ sender: Any) {
         DeletePost.isEnabled = false
-        let OldPost = Post(id:postId!);// self.UserName.text!);
-        OldPost.pic = picPath ?? nil;
-        Model.instance.remove(post: OldPost){ error in
+        let OldPost = post
+        Model.instance.remove(post: OldPost!){ error in
             if(error != nil){
                 let alert = UIAlertController(title: "error", message: "Error: \(error.debugDescription)", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))

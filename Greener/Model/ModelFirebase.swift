@@ -37,10 +37,9 @@ class ModelFirebase{
             }
         }
         // Remove the image from storage
-        if(post.pic != nil)
-        {
-        let imageRef = storageRef.child(post.pic);
-        imageRef.delete(completion: callback);
+        if(post.pic != ""){
+            let imageRef = storageRef.child(post.pic);
+            imageRef.delete(completion: callback);
         }
     }
     
