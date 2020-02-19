@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ModelSql.getLastUpdateDate(name:):ModelSql.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Int64(sqlite3_column_int64(sqlite3_stmt,1))">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
