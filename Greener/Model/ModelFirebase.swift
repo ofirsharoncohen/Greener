@@ -29,18 +29,20 @@ class ModelFirebase{
     func remove(post:Post, callback:@escaping (Error?)->Void){
         //let uid = FIRAuth.auth()!.currentUser!.uid
         let db = Firestore.firestore()
-        
+        var err:Error?
         // Remove the post from the DB
         db.collection("posts").document(post.id).delete(){ error in
             if error != nil {
-                callback(error);
+                err = error;
             }
         }
         // Remove the image from storage
         if(post.pic != ""){
             let imageRef = storageRef.child(post.pic);
-            imageRef.delete(completion: callback);
+            imageRef.delete(completion: { error in err = error;});
         }
+        ModelEvents.PostDataEvent.remove();
+        callback(err);
     }
     
     lazy var storageRef = Storage.storage().reference(forURL:
@@ -49,7 +51,8 @@ class ModelFirebase{
     //TODO: implement since
     func getAllPosts(since:Int64, callback: @escaping ([Post]?)->Void){
         let db = Firestore.firestore()
-        db.collection("posts").order(by: "lastUpdate").start(at: [Timestamp(seconds: since, nanoseconds: 0)]).getDocuments { (querySnapshot, err) in
+//        db.collection("posts").order(by: "lastUpdate",descending: true).start(at: [Timestamp(seconds: since, nanoseconds: 0)]).getDocuments { (querySnapshot, err) in
+        db.collection("posts").order(by: "lastUpdate",descending: true).getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 callback(nil);
