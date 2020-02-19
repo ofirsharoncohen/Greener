@@ -33,21 +33,23 @@ extension Post{
             sqlite3_bind_text(sqlite3_stmt, 4, userId,-1,nil);
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added succefully")
+                print("new post added succefully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
     }
     
     func Remove(){
-        var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(ModelSql.instance.database,"DELETE FROM POSTS WHERE POST_ID=?;",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+        var sqlite3_stmt: OpaquePointer?
+        if (sqlite3_prepare_v2(ModelSql.instance.database,"DELETE FROM POSTS WHERE POST_ID=?;", -1, &sqlite3_stmt,nil) == SQLITE_OK){
             let id = self.id.cString(using: .utf8)
            
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("row deleted succefully")
+                print("post deleted succefully")
+            }else{
+                print("error deleting post")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
@@ -80,7 +82,8 @@ extension Post{
         return ModelSql.instance.getLastUpdateDate(name: "POSTS")
     }
     
-    static func ClearTable(){
-        return ModelSql.instance.clear();
+    static func ClearTable(callback:@escaping ()->Void){
+        ModelSql.instance.clear();
+        callback();
     }
 }
