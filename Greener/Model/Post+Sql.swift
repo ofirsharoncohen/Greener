@@ -74,6 +74,28 @@ extension Post{
         return data
     }
     
+    static func getMyPostsFromDb(userId:String)->[Post]{
+        var sqlite3_stmt: OpaquePointer? = nil
+        var data = [Post]()
+        
+        if (sqlite3_prepare_v2(ModelSql.instance.database,"SELECT * from POSTS WHERE USER_ID=?;",-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+             let id = userId.cString(using: .utf8)
+                      
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
+            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
+                let postId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
+                let post = Post(id: postId);
+                post.content = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                post.pic = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
+                post.userId = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
+                data.append(post)
+            }
+        }
+        sqlite3_finalize(sqlite3_stmt)
+        return data
+    }
+
     static func setLastUpdate(lastUpdated:Int64){
         return ModelSql.instance.setLastUpdate(name: "POSTS", lastUpdated: lastUpdated);
     }

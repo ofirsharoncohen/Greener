@@ -70,5 +70,30 @@ class ModelFirebase{
                 callback(data);
             }
         };
+        
+        
+    }
+    
+    func getMyPosts(userId:String,since:Int64, callback: @escaping ([Post]?)->Void){
+            let db = Firestore.firestore()
+    //        db.collection("posts").order(by: "lastUpdate",descending: true).start(at: [Timestamp(seconds: since, nanoseconds: 0)]).getDocuments { (querySnapshot, err) in
+        db.collection("posts").whereField("userId", isEqualTo: userId).getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    callback(nil);
+                } else {
+                    var data = [Post]();
+                    for document in querySnapshot!.documents {
+                        if let ts = document.data()["lastUpdate"] as? Timestamp{
+                            let tsDate = ts.dateValue();
+                            print("\(tsDate)");
+                            let tsDouble = tsDate.timeIntervalSince1970;
+                            print("\(tsDouble)");
+                        }
+                        data.append(Post(json: document.data()));
+                    }
+                    callback(data);
+                }
+        }
     }
 }

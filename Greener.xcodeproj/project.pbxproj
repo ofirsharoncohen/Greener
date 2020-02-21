@@ -17,6 +17,7 @@
 		3D559F4A23C894060001954E /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4923C894060001954E /* FirebaseStorage.swift */; };
 		3D559F4C23C896E80001954E /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4B23C896E80001954E /* Post+Firebase.swift */; };
 		3DA87C0D23FFF9AC00D284C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */; };
+		3DA87C0F2400048A00D284C0 /* ProfileTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA87C0E2400048A00D284C0 /* ProfileTableTableViewController.swift */; };
 		3DC8C17023BD133000C54C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C16F23BD133000C54C44 /* AppDelegate.swift */; };
 		3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C17123BD133000C54C44 /* SceneDelegate.swift */; };
 		3DC8C17423BD133000C54C44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C17323BD133000C54C44 /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 		3D559F4923C894060001954E /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		3D559F4B23C896E80001954E /* Post+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Firebase.swift"; sourceTree = "<group>"; };
 		3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3DA87C0E2400048A00D284C0 /* ProfileTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableTableViewController.swift; sourceTree = "<group>"; };
 		3DC8C16C23BD133000C54C44 /* Greener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC8C16F23BD133000C54C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC8C17123BD133000C54C44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				3D00C23623C6452C00BDF468 /* InfoViewController.swift */,
 				3D559F4623C88FA30001954E /* Greener-Bridging-Header.h */,
 				3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */,
+				3DA87C0E2400048A00D284C0 /* ProfileTableTableViewController.swift */,
 			);
 			path = Greener;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				3DE147CF23BF3F2600DE50C4 /* Post.swift in Sources */,
 				3DC8C18823BD228900C54C44 /* MainFeedTableViewController.swift in Sources */,
 				3D559F4323C88D250001954E /* Post+Sql.swift in Sources */,
+				3DA87C0F2400048A00D284C0 /* ProfileTableTableViewController.swift in Sources */,
 				3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */,
 				3D559F4823C890CD0001954E /* ModelSql.swift in Sources */,
 				3D559F4C23C896E80001954E /* Post+Firebase.swift in Sources */,
