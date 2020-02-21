@@ -16,6 +16,7 @@
 		3D559F4823C890CD0001954E /* ModelSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4723C890CD0001954E /* ModelSql.swift */; };
 		3D559F4A23C894060001954E /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4923C894060001954E /* FirebaseStorage.swift */; };
 		3D559F4C23C896E80001954E /* Post+Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D559F4B23C896E80001954E /* Post+Firebase.swift */; };
+		3DA87C0D23FFF9AC00D284C0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */; };
 		3DC8C17023BD133000C54C44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C16F23BD133000C54C44 /* AppDelegate.swift */; };
 		3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C17123BD133000C54C44 /* SceneDelegate.swift */; };
 		3DC8C17423BD133000C54C44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C17323BD133000C54C44 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		3D559F4723C890CD0001954E /* ModelSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql.swift; sourceTree = "<group>"; };
 		3D559F4923C894060001954E /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		3D559F4B23C896E80001954E /* Post+Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Firebase.swift"; sourceTree = "<group>"; };
+		3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3DC8C16C23BD133000C54C44 /* Greener.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greener.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DC8C16F23BD133000C54C44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DC8C17123BD133000C54C44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */,
 				3D00C23623C6452C00BDF468 /* InfoViewController.swift */,
 				3D559F4623C88FA30001954E /* Greener-Bridging-Header.h */,
+				3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */,
 			);
 			path = Greener;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DA87C0D23FFF9AC00D284C0 /* TabBarViewController.swift in Sources */,
 				3DC8C18A23BD285400C54C44 /* PostTableViewCell.swift in Sources */,
 				3D00C23723C6452C00BDF468 /* InfoViewController.swift in Sources */,
 				3DC8C18423BD18DC00C54C44 /* LoginViewController.swift in Sources */,

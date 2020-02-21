@@ -129,7 +129,11 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NewPost.content = self.postContent.text!
         NewPost.userId = self.userId!
         guard let selectedImage = selectedImage else {
-            //if there is no image
+            //if user didn't pick a picture
+            if (post?.pic != nil){
+                NewPost.pic = post!.pic;
+            }
+            //if there is no picture in the post
             Model.instance.add(post: NewPost);
             self.navigationController?.popViewController(animated: true);
             return;

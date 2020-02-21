@@ -31,7 +31,9 @@ class MainFeedTableViewController: UITableViewController {
         }
         self.refreshControl?.beginRefreshing()
         self.reloadData();
-        // MARK: - Table view data source
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +45,6 @@ class MainFeedTableViewController: UITableViewController {
                 self.user = "";
             }
         }
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

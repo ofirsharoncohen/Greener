@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.viewDidAppear(_:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Auth.auth().currentUser!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static FirebaseStorage.saveImage(image:callback:):FirebaseStorage.swift">
          <PersistentStrings>
             <PersistentString

@@ -32,14 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88U-Qi-LBv">
-                                <rect key="frame" x="267" y="524" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="VfE-4M-gpo" kind="show" id="COk-5e-Apq"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Recycle.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uqq-LO-JyW">
                                 <rect key="frame" x="97" y="216" width="220" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -49,10 +41,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="aQ2-Rw-s4O"/>
+                    <connections>
+                        <segue destination="VfE-4M-gpo" kind="show" identifier="toLoginSegue" id="E32-qQ-QZ2"/>
+                        <segue destination="2lo-3M-UuP" kind="show" identifier="StartAppSegue" id="QhN-D4-Zlk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65.217391304347828" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-120" y="136"/>
         </scene>
         <!--Login-->
         <scene sceneID="GDZ-1U-0aT">
@@ -121,17 +117,78 @@
                         <outlet property="passwordTextField" destination="Jwl-Gg-7lQ" id="lYh-dh-k29"/>
                         <outlet property="signupButton" destination="qHv-zQ-AZh" id="3UA-cD-224"/>
                         <outlet property="userTextField" destination="23o-im-faS" id="Tof-m2-Gct"/>
-                        <segue destination="FDH-A6-zs6" kind="show" identifier="finishLoginSegue" id="e7g-ex-esI"/>
+                        <segue destination="2lo-3M-UuP" kind="show" identifier="finishLoginSegue" id="a1R-L6-8xI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxT-dP-VaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579.71014492753625" y="135.9375"/>
+            <point key="canvasLocation" x="635" y="136"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="nxw-VO-nmV">
+            <objects>
+                <tableViewController id="spD-NH-WIv" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y6D-bq-Teq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zit-jb-FQY" customClass="PostTableViewCell" customModule="Greener" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zit-jb-FQY" id="YyC-Ug-9y6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="spD-NH-WIv" id="4u2-an-ai1"/>
+                            <outlet property="delegate" destination="spD-NH-WIv" id="Cta-FR-3cf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" selectedImage="person.fill" id="tQ6-Xz-qZi"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0N-em-XUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1109" y="880"/>
         </scene>
         <!--Greener-->
+        <scene sceneID="ToD-Sb-uTl">
+            <objects>
+                <tabBarController id="2lo-3M-UuP" customClass="TabBarViewController" customModule="Greener" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Greener" id="htn-Ho-vp7">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="H73-OQ-Agq">
+                            <connections>
+                                <action selector="LogOut:" destination="2lo-3M-UuP" id="hZb-SK-NWB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="fpk-oH-Lal">
+                            <connections>
+                                <segue destination="21a-TC-CjP" kind="show" identifier="NewPostSegue" id="BGS-eX-mHj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="moe-Rh-kkn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="LogOut" destination="H73-OQ-Agq" id="63g-uc-Ffp"/>
+                        <outlet property="addNewPost" destination="fpk-oH-Lal" id="KFn-y3-Ex1"/>
+                        <segue destination="FDH-A6-zs6" kind="relationship" relationship="viewControllers" id="etk-Jh-w3F"/>
+                        <segue destination="spD-NH-WIv" kind="relationship" relationship="viewControllers" id="g1N-oa-7iE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gy-fG-SmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-275" y="884"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="3nZ-JP-J3N">
             <objects>
-                <tableViewController id="FDH-A6-zs6" customClass="MainFeedTableViewController" customModule="Greener" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Home" id="FDH-A6-zs6" customClass="MainFeedTableViewController" customModule="Greener" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="326" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="X4O-WH-TuT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,6 +233,7 @@
                             <outlet property="delegate" destination="FDH-A6-zs6" id="kaw-MQ-84i"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" selectedImage="house.fill" id="nhi-1O-Map"/>
                     <navigationItem key="navigationItem" title="Greener" id="ppS-Dj-EvT">
                         <barButtonItem key="leftBarButtonItem" title="LogOut" id="Upa-C5-7MT">
                             <connections>
@@ -344,19 +402,21 @@
                         <outlet property="Email" destination="Xo5-4n-y1N" id="HGI-l0-xY6"/>
                         <outlet property="Password" destination="mbl-jJ-o26" id="wdU-Ec-EBF"/>
                         <outlet property="SubmitBtn" destination="IuX-AM-MZa" id="wd9-ou-uN0"/>
-                        <segue destination="FDH-A6-zs6" kind="show" identifier="finishSignupSegue" id="0hD-H3-WWr"/>
+                        <segue destination="2lo-3M-UuP" kind="show" identifier="finishSignupSegue" id="Hbo-X3-6J2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Em-hc-LxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="136"/>
+            <point key="canvasLocation" x="1459" y="128"/>
         </scene>
     </scenes>
     <resources>
         <image name="Recycle.jpg" width="240" height="234.72000122070312"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Imh-9d-9QC"/>
-        <segue reference="0hD-H3-WWr"/>
+        <segue reference="KEQ-mP-h8n"/>
+        <segue reference="Hbo-X3-6J2"/>
     </inferredMetricsTieBreakers>
 </document>
