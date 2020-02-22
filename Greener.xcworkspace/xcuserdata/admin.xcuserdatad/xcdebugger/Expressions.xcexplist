@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "InfoViewController.savePost(_:):InfoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "post!.pic">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ModelSql.getLastUpdateDate(name:):ModelSql.swift">
          <PersistentStrings>
             <PersistentString

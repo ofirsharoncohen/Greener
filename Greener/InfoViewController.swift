@@ -65,7 +65,8 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     @IBAction func DeletePic(_ sender: Any) {
         self.postPic.image = nil;
-        selectedImage = nil
+        self.post!.pic = "";
+        selectedImage = nil;
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
