@@ -6,6 +6,9 @@
          contextName = "TabBarViewController.viewDidLoad():TabBarViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "">
+            </PersistentString>
+            <PersistentString
                value = "self.tabBarController">
             </PersistentString>
          </PersistentStrings>

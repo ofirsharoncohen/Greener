@@ -8,12 +8,13 @@
 
 import UIKit
 
-class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var UserName: UILabel!
     @IBOutlet weak var postPic: UIImageView!
     @IBOutlet weak var postContent: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var DeletePost: UIButton!
     @IBOutlet weak var SavePost: UIButton!
@@ -67,6 +68,7 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.postPic.image = nil;
         self.post!.pic = "";
         selectedImage = nil;
+        removePhoto.isHidden = true
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -119,6 +121,9 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func savePost(_ sender: Any) {
         SavePost.isEnabled = false
+        removePhoto.isEnabled = false
+        UploadPhoto.isEnabled = false
+        
         if self.postContent.text == "" {
             let alert = UIAlertController(title: "error", message: "Post can't be empty", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
@@ -147,5 +152,6 @@ class InfoViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)    }
 }

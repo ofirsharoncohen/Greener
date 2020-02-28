@@ -29,6 +29,7 @@ class ProfileTableTableViewController: UITableViewController {
         self.refreshControl?.beginRefreshing()
         self.reloadData();
 
+        self.navigationItem.title = Auth.auth().currentUser!.email
     }
     
     override func viewWillAppear(_ animated: Bool) {

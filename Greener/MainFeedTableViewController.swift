@@ -32,7 +32,7 @@ class MainFeedTableViewController: UITableViewController {
         self.refreshControl?.beginRefreshing()
         self.reloadData();
         
-        
+        self.navigationItem.title = "Greener";
         
     }
     

@@ -19,14 +19,14 @@ class TabBarViewController: UITabBarController {
         
         self.navigationItem.leftBarButtonItem = LogOut;
         self.navigationItem.rightBarButtonItem = addNewPost;
-        if(self.tabBarController?.selectedIndex  == 0)
-        {
-            self.navigationItem.title = "Greener";
-        }
-        else
-        {
-            self.navigationItem.title = Auth.auth().currentUser!.email
-        }
+        //if(self.tabBar.selectedItem.  == 0)
+        //{
+          //  self.navigationItem.title = "Greener";
+        //}
+        //else
+        //{
+          //  self.navigationItem.title = Auth.auth().currentUser!.email
+        //}
         self.navigationItem.hidesBackButton = true;        // Do any additional setup after loading the view.
     }
     
