@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 
 class ProfileTableTableViewController: UITableViewController {
-
-   var user: String = ""
+    
+    var user: String = ""
     
     var observer:Any?;
     var handle: AuthStateDidChangeListenerHandle?
@@ -28,8 +28,6 @@ class ProfileTableTableViewController: UITableViewController {
         }
         self.refreshControl?.beginRefreshing()
         self.reloadData();
-
-        self.navigationItem.title = Auth.auth().currentUser!.email
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +39,8 @@ class ProfileTableTableViewController: UITableViewController {
                 self.user = "";
             }
         }
-        self.navigationItem.title = self.user
-        
+        //self.navigationItem.title = self.user
+//        self.navigationItem.title = Auth.auth().currentUser!.email;
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -110,5 +108,5 @@ class ProfileTableTableViewController: UITableViewController {
     }
     
     
-
+    
 }

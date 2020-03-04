@@ -16,7 +16,7 @@ class PostTableViewCell: UITableViewCell {
    // @IBOutlet weak var postContent: UITextView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib();
         // Initialization code
     }
 

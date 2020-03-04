@@ -45,6 +45,7 @@ class MainFeedTableViewController: UITableViewController {
                 self.user = "";
             }
         }
+//        self.navigationItem.title = Auth.auth().currentUser!.email;
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -17,20 +17,22 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.items?[0].title = "Greener";
+        tabBar.items?[1].title = Auth.auth().currentUser!.email;
+        
         self.navigationItem.leftBarButtonItem = LogOut;
         self.navigationItem.rightBarButtonItem = addNewPost;
-        //if(self.tabBar.selectedItem.  == 0)
-        //{
-          //  self.navigationItem.title = "Greener";
-        //}
-        //else
-        //{
-          //  self.navigationItem.title = Auth.auth().currentUser!.email
-        //}
-        self.navigationItem.hidesBackButton = true;        // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true;
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        title = tabBar.selectedItem?.title;
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        title = tabBar.selectedItem?.title;
+    }
     @IBAction func LogOut(_ sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
@@ -48,14 +50,6 @@ class TabBarViewController: UITabBarController {
             vc.isNew = true
             vc.userId = Auth.auth().currentUser!.email
         }
-    }    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    }
     
 }
