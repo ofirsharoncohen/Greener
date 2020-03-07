@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class ProfileTableTableViewController: UITableViewController {
-    
     var user: String = ""
     
     var observer:Any?;
@@ -28,6 +27,8 @@ class ProfileTableTableViewController: UITableViewController {
         }
         self.refreshControl?.beginRefreshing()
         self.reloadData();
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,8 +40,6 @@ class ProfileTableTableViewController: UITableViewController {
                 self.user = "";
             }
         }
-        //self.navigationItem.title = self.user
-//        self.navigationItem.title = Auth.auth().currentUser!.email;
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,13 +72,15 @@ class ProfileTableTableViewController: UITableViewController {
         
         let post = data[indexPath.row]
         cell.userName.text = post.userId
+        
         cell.postContent.text = post.content
-        //  cell.postPic.image = UIImage(named: "pic")
+        cell.postContent.backgroundColor = .white;
+        
         if post.pic != "" && post.pic != nil {
             cell.postPic.kf.setImage(with: URL(string: post.pic));
         }else {
-            let dafaultPicURL: String = "";
-            cell.postPic.kf.setImage(with: URL(string: dafaultPicURL))
+            let defaultPicURL: String = "";
+            cell.postPic.kf.setImage(with: URL(string: defaultPicURL));
         }
         return cell
     }

@@ -10,6 +10,12 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
+    //the constraints of user.bottom picture.bottom and content.top
+    @IBOutlet weak var userBottom: NSLayoutConstraint!
+
+    @IBOutlet weak var picTop: NSLayoutConstraint!
+
+    @IBOutlet weak var picHeight: NSLayoutConstraint!
     @IBOutlet weak var postPic: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var postContent: UILabel!
@@ -26,7 +32,5 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
 
 }

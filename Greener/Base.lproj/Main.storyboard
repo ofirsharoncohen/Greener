@@ -147,48 +147,54 @@
         <scene sceneID="nxw-VO-nmV">
             <objects>
                 <tableViewController title="Profile" id="spD-NH-WIv" customClass="ProfileTableTableViewController" customModule="Greener" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="326" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y6D-bq-Teq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="181" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y6D-bq-Teq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81484818459999997" green="0.87514495849999996" blue="0.56090372799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.81491714719999997" green="0.87098795179999999" blue="0.57797795529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="326" id="tC1-Ha-50z" customClass="PostTableViewCell" customModule="Greener" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="326"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="181" id="tC1-Ha-50z" customClass="PostTableViewCell" customModule="Greener" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="181"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tC1-Ha-50z" id="LEt-ez-iQG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="326"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="181"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sij-1M-RLa">
-                                            <rect key="frame" x="15" y="5" width="85.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sij-1M-RLa">
+                                            <rect key="frame" x="15" y="5" width="384" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-BH-ANJ">
-                                            <rect key="frame" x="15" y="295.5" width="42" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8k9-k4-66b">
-                                            <rect key="frame" x="0.0" y="33" width="414" height="250"/>
+                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k9-k4-66b">
+                                            <rect key="frame" x="0.0" y="33" width="414" height="111.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="rdj-vz-1xO"/>
+                                            </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-BH-ANJ">
+                                            <rect key="frame" x="15" y="152.5" width="384" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="sij-1M-RLa" firstAttribute="top" secondItem="LEt-ez-iQG" secondAttribute="top" constant="5" id="47R-6e-6SN"/>
-                                        <constraint firstAttribute="bottom" secondItem="jfg-BH-ANJ" secondAttribute="bottom" constant="10" id="Fez-rn-jGh"/>
-                                        <constraint firstItem="8k9-k4-66b" firstAttribute="top" secondItem="sij-1M-RLa" secondAttribute="bottom" constant="10" id="Fyx-Py-JK8"/>
-                                        <constraint firstItem="jfg-BH-ANJ" firstAttribute="leading" secondItem="LEt-ez-iQG" secondAttribute="leading" constant="15" id="MNh-H2-LIN"/>
-                                        <constraint firstItem="jfg-BH-ANJ" firstAttribute="top" secondItem="8k9-k4-66b" secondAttribute="bottom" constant="10" id="UAN-fg-m8j"/>
-                                        <constraint firstItem="sij-1M-RLa" firstAttribute="leading" secondItem="LEt-ez-iQG" secondAttribute="leading" constant="15" id="daG-cm-JnB"/>
+                                        <constraint firstItem="8k9-k4-66b" firstAttribute="leading" secondItem="LEt-ez-iQG" secondAttribute="leading" id="4xn-Ix-jGo"/>
+                                        <constraint firstItem="jfg-BH-ANJ" firstAttribute="top" secondItem="8k9-k4-66b" secondAttribute="bottom" constant="8" id="Efa-AX-8ch"/>
+                                        <constraint firstItem="sij-1M-RLa" firstAttribute="leading" secondItem="LEt-ez-iQG" secondAttribute="leading" constant="15" id="I8j-1W-D1J"/>
+                                        <constraint firstItem="jfg-BH-ANJ" firstAttribute="top" secondItem="8k9-k4-66b" secondAttribute="bottom" constant="8" id="Ifl-Nd-UjH"/>
+                                        <constraint firstAttribute="trailing" secondItem="jfg-BH-ANJ" secondAttribute="trailing" constant="15" id="TKH-lU-XCR"/>
+                                        <constraint firstItem="jfg-BH-ANJ" firstAttribute="leading" secondItem="LEt-ez-iQG" secondAttribute="leading" constant="15" id="TeH-jY-ynC"/>
+                                        <constraint firstAttribute="trailing" secondItem="8k9-k4-66b" secondAttribute="trailing" id="gGh-Xy-Wvq"/>
+                                        <constraint firstAttribute="bottom" secondItem="jfg-BH-ANJ" secondAttribute="bottom" constant="8" id="gRm-mU-xyU"/>
+                                        <constraint firstItem="sij-1M-RLa" firstAttribute="top" secondItem="LEt-ez-iQG" secondAttribute="top" constant="5" id="hGK-dA-ecf"/>
+                                        <constraint firstItem="8k9-k4-66b" firstAttribute="top" secondItem="sij-1M-RLa" secondAttribute="bottom" constant="7" id="igw-ys-0gu"/>
+                                        <constraint firstAttribute="trailing" secondItem="sij-1M-RLa" secondAttribute="trailing" constant="15" id="quw-j5-sT2"/>
+                                        <constraint firstItem="8k9-k4-66b" firstAttribute="top" secondItem="sij-1M-RLa" secondAttribute="bottom" constant="7.5" id="x73-vX-PgK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.81484818459999997" green="0.87514495849999996" blue="0.56090372799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="8k9-k4-66b" firstAttribute="width" secondItem="tC1-Ha-50z" secondAttribute="width" id="Q5F-js-TmB"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="postContent" destination="jfg-BH-ANJ" id="BRO-VS-8Q3"/>
                                     <outlet property="postPic" destination="8k9-k4-66b" id="3wj-0t-77l"/>
@@ -468,12 +474,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-4n-y1N">
-                                <rect key="frame" x="209" y="426" width="155" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVa-WE-SfT">
                                 <rect key="frame" x="209" y="501" width="155" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -481,7 +481,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbl-jJ-o26">
-                                <rect key="frame" x="209" y="349" width="155" height="34"/>
+                                <rect key="frame" x="209" y="424" width="155" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -491,6 +491,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.81491714719999997" green="0.87098795179999999" blue="0.57797795529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-4n-y1N">
+                                <rect key="frame" x="209" y="349" width="155" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.81484818458557129" green="0.87514495849609375" blue="0.56090372800827026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -521,6 +527,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="g1k-du-zvo"/>
-        <segue reference="a1R-L6-8xI"/>
+        <segue reference="Hbo-X3-6J2"/>
     </inferredMetricsTieBreakers>
 </document>
