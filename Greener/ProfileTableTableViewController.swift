@@ -68,23 +68,9 @@ class ProfileTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell:PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
-//
-//        let post = data[indexPath.row]
-//        cell.userName.text = post.userId
-//
-//        cell.postContent.text = post.content
-//        cell.postContent.backgroundColor = .white;
-//
-//        if post.pic != "" && post.pic != nil {
-//            cell.postPic.kf.setImage(with: URL(string: post.pic));
-//        }else {
-//            let defaultPicURL: String = "";
-//            cell.postPic.kf.setImage(with: URL(string: defaultPicURL));
-//        }
-//        return cell
+
          let post = data[indexPath.row];
-                if (post.pic == "" || post.pic == nil) {
+                if (post.pic == "") {
                     let cell: PostTableViewCellNoPic
                     cell = tableView.dequeueReusableCell(withIdentifier: "PostCellNoPic", for: indexPath) as! PostTableViewCellNoPic
                     cell.userName.text = post.userId
