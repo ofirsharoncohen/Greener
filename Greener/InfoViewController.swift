@@ -66,7 +66,9 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     @IBAction func DeletePic(_ sender: Any) {
         self.postPic.image = nil;
-        self.post!.pic = "";
+        if (self.post != nil){
+            self.post!.pic = "";
+        }
         selectedImage = nil;
         removePhoto.isHidden = true
     }
