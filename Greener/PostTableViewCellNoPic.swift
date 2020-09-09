@@ -1,22 +1,22 @@
 //
-//  PostTableViewCell.swift
+//  PostTableViewCellNoPic.swift
 //  Greener
 //
-//  Created by Studio on 01/01/2020.
+//  Created by Bar Kazzaz on 09/09/2020.
 //  Copyright © 2020 Studio. All rights reserved.
 //
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
-    
-    
-    
+class PostTableViewCellNoPic: PostTableViewCell {
+
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var postContent: UILabel!
     override func awakeFromNib() {
-        super.awakeFromNib();
+        super.awakeFromNib()
         // Initialization code
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

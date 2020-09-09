@@ -33,6 +33,8 @@ class MainFeedTableViewController: UITableViewController {
         self.reloadData();
         
         self.navigationItem.title = "Greener";
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
         
     }
     
@@ -74,19 +76,22 @@ class MainFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         
-        let post = data[indexPath.row]
-        cell.userName.text = post.userId
-        cell.postContent.text = post.content
-        //  cell.postPic.image = UIImage(named: "pic")
-        if post.pic != "" && post.pic != nil {
-            cell.postPic.kf.setImage(with: URL(string: post.pic));
+        let post = data[indexPath.row];
+        if (post.pic == "") {
+            let cell: PostTableViewCellNoPic = tableView.dequeueReusableCell(withIdentifier: "PostCellNoPic", for: indexPath) as! PostTableViewCellNoPic
+            cell.userName.text = post.userId
+            cell.postContent.text = post.content
+//            let dafaultPicURL: String = "";
+//            cell.postPic.kf.setImage(with: URL(string: dafaultPicURL))
+            return cell
         }else {
-            let dafaultPicURL: String = "";
-            cell.postPic.kf.setImage(with: URL(string: dafaultPicURL))
+            let cell: PostTableViewCellWithPic = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCellWithPic
+            cell.userName.text = post.userId
+            cell.postContent.text = post.content
+            cell.postPic.kf.setImage(with: URL(string: post.pic));
+            return cell
         }
-        return cell
     }
     
     var selected:Post?

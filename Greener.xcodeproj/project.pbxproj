@@ -32,6 +32,8 @@
 		3DC8C18A23BD285400C54C44 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */; };
 		3DE147CF23BF3F2600DE50C4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE147CE23BF3F2600DE50C4 /* Post.swift */; };
 		3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE147D023BF4FBD00DE50C4 /* Model.swift */; };
+		C7138C07250925A100B42D6A /* PostTableViewCellNoPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7138C06250925A100B42D6A /* PostTableViewCellNoPic.swift */; };
+		C7138C092509277500B42D6A /* PostTableViewCellWithPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7138C082509277500B42D6A /* PostTableViewCellWithPic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +81,8 @@
 		3DE147D023BF4FBD00DE50C4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7C7F99FA16C073FD2FAA74D5 /* Pods-Greener.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Greener.release.xcconfig"; path = "Target Support Files/Pods-Greener/Pods-Greener.release.xcconfig"; sourceTree = "<group>"; };
 		C2CAE39CE872CE17DA47422A /* Pods_Greener.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Greener.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7138C06250925A100B42D6A /* PostTableViewCellNoPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellNoPic.swift; sourceTree = "<group>"; };
+		C7138C082509277500B42D6A /* PostTableViewCellWithPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellWithPic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 				3DC8C18523BD1E2300C54C44 /* SignupViewController.swift */,
 				3DC8C18723BD228900C54C44 /* MainFeedTableViewController.swift */,
 				3DC8C18923BD285400C54C44 /* PostTableViewCell.swift */,
+				C7138C06250925A100B42D6A /* PostTableViewCellNoPic.swift */,
+				C7138C082509277500B42D6A /* PostTableViewCellWithPic.swift */,
 				3D00C23623C6452C00BDF468 /* InfoViewController.swift */,
 				3D559F4623C88FA30001954E /* Greener-Bridging-Header.h */,
 				3DA87C0C23FFF9AC00D284C0 /* TabBarViewController.swift */,
@@ -299,12 +305,14 @@
 				3DC8C18623BD1E2300C54C44 /* SignupViewController.swift in Sources */,
 				3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */,
 				3DC8C17023BD133000C54C44 /* AppDelegate.swift in Sources */,
+				C7138C092509277500B42D6A /* PostTableViewCellWithPic.swift in Sources */,
 				3D559F3723C87BD70001954E /* ModelFirebase.swift in Sources */,
 				3DE147CF23BF3F2600DE50C4 /* Post.swift in Sources */,
 				3DC8C18823BD228900C54C44 /* MainFeedTableViewController.swift in Sources */,
 				3D559F4323C88D250001954E /* Post+Sql.swift in Sources */,
 				3DA87C0F2400048A00D284C0 /* ProfileTableTableViewController.swift in Sources */,
 				3DC8C17223BD133000C54C44 /* SceneDelegate.swift in Sources */,
+				C7138C07250925A100B42D6A /* PostTableViewCellNoPic.swift in Sources */,
 				3D559F4823C890CD0001954E /* ModelSql.swift in Sources */,
 				3D559F4C23C896E80001954E /* Post+Firebase.swift in Sources */,
 			);
