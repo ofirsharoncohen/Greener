@@ -34,6 +34,7 @@
 		3DE147D123BF4FBD00DE50C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE147D023BF4FBD00DE50C4 /* Model.swift */; };
 		C7138C07250925A100B42D6A /* PostTableViewCellNoPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7138C06250925A100B42D6A /* PostTableViewCellNoPic.swift */; };
 		C7138C092509277500B42D6A /* PostTableViewCellWithPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7138C082509277500B42D6A /* PostTableViewCellWithPic.swift */; };
+		C7138C0B25095AA600B42D6A /* defaultPic.png in Resources */ = {isa = PBXBuildFile; fileRef = C7138C0A25095AA500B42D6A /* defaultPic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +84,7 @@
 		C2CAE39CE872CE17DA47422A /* Pods_Greener.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Greener.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7138C06250925A100B42D6A /* PostTableViewCellNoPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellNoPic.swift; sourceTree = "<group>"; };
 		C7138C082509277500B42D6A /* PostTableViewCellWithPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellWithPic.swift; sourceTree = "<group>"; };
+		C7138C0A25095AA500B42D6A /* defaultPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultPic.png; path = Assets.xcassets/defaultPic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		3DC8C16E23BD133000C54C44 /* Greener */ = {
 			isa = PBXGroup;
 			children = (
+				C7138C0A25095AA500B42D6A /* defaultPic.png */,
 				3D0424932409334F0047D4B7 /* Logosmall.jpg */,
 				3D04249124091DB30047D4B7 /* Logo.png */,
 				3D559F4023C884BF0001954E /* GoogleService-Info.plist */,
@@ -239,6 +242,7 @@
 			files = (
 				3D04249224091DB30047D4B7 /* Logo.png in Resources */,
 				3DC8C17C23BD133200C54C44 /* LaunchScreen.storyboard in Resources */,
+				C7138C0B25095AA600B42D6A /* defaultPic.png in Resources */,
 				3D00C23523C62B4600BDF468 /* Recycle.jpg in Resources */,
 				3D042494240933500047D4B7 /* Logosmall.jpg in Resources */,
 				3D559F4123C884C00001954E /* GoogleService-Info.plist in Resources */,

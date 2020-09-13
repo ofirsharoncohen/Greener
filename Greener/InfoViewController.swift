@@ -29,6 +29,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     var postId:String?
     var isNew:Bool = false
     var isEditable = false
+    var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,9 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         if (isNew || isEditable){
             EditPost()
         }
+        spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium);
+        spinner.center = view.center;
+        view.addSubview(spinner);
     }
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
@@ -70,6 +74,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             self.post!.pic = "";
         }
         selectedImage = nil;
+        self.postPic.image = UIImage(named: "defaultPic");
         removePhoto.isHidden = true
     }
     
@@ -122,15 +127,23 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     @IBAction func savePost(_ sender: Any) {
+        self.spinner.isHidden = false;
+        self.spinner.startAnimating();
         SavePost.isEnabled = false
         removePhoto.isEnabled = false
         UploadPhoto.isEnabled = false
+        DeletePost.isEnabled = false
         
         if self.postContent.text == "" {
-            let alert = UIAlertController(title: "error", message: "Post can't be empty", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Error", message: "Post can not be empty", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             SavePost.isEnabled = true
+            removePhoto.isEnabled = true
+            UploadPhoto.isEnabled = true
+            DeletePost.isEnabled = true
+            self.spinner.isHidden = true;
+            self.spinner.stopAnimating();
             return
         }
         let NewPost = Post(id:postId!);// self.UserName.text!);
@@ -144,12 +157,16 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             //if there is no picture in the post
             Model.instance.add(post: NewPost);
             self.navigationController?.popViewController(animated: true);
+            self.spinner.stopAnimating();
+            self.spinner.isHidden = true;
             return;
         }
         //if there is an image for this post
         Model.instance.saveImage(image: selectedImage, postId: NewPost.id) { (url) in
             NewPost.pic = url;
             Model.instance.add(post: NewPost);
+            self.spinner.stopAnimating();
+            self.spinner.isHidden = true;
             self.navigationController?.popViewController(animated: true);
         }
     }
