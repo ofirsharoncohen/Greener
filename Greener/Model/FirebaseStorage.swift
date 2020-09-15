@@ -29,4 +29,16 @@ class FirebaseStorage {
             }
         }
     }
+    static func deleteImage(postId: String, callback:@escaping (String)->Void){
+        let storageRef = Storage.storage().reference(forURL:
+            "gs://greener-c532e.appspot.com")
+        let imageRef = storageRef.child("images/" + postId)
+        imageRef.delete { error in
+            if let error = error {
+                callback(error.localizedDescription)
+            } else {
+                callback("no error")
+            }
+        }
+    }
 }

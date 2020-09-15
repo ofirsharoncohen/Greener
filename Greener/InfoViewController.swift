@@ -29,10 +29,15 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     var postId:String?
     var isNew:Bool = false
     var isEditable = false
+    var originalPost:Post?
     var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (post != nil){
+            originalPost = Post(id: post!.id, userId: post!.userId, content: post!.content, pic: post!.pic)
+        }
         
         UserName.text = post?.userId
         postContent.text = post?.content
@@ -69,13 +74,15 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         }
     }
     @IBAction func DeletePic(_ sender: Any) {
+        //        self.navigationController?.popViewController(animated: true);
         self.postPic.image = nil;
         if (self.post != nil){
             self.post!.pic = "";
         }
-        selectedImage = nil;
+        self.selectedImage = nil;
         self.postPic.image = UIImage(named: "defaultPic");
-        removePhoto.isHidden = true
+        self.removePhoto.isHidden = true
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -149,17 +156,40 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let NewPost = Post(id:postId!);// self.UserName.text!);
         NewPost.content = self.postContent.text!
         NewPost.userId = self.userId!
-        guard let selectedImage = selectedImage else {
+        guard let selectedImage = self.selectedImage else {
             //if user didn't pick a picture
             if (post?.pic != nil){
                 NewPost.pic = post!.pic;
             }
             //if there is no picture in the post
-            Model.instance.add(post: NewPost);
-            self.navigationController?.popViewController(animated: true);
+            if(originalPost?.pic != post?.pic){
+                // remove the old post picture from storage
+                Model.instance.removeImageFromStorage(post: post!.id) { error in
+                    if(error != "no error"){
+                        // if there was an error
+                        let alert = UIAlertController(title: "error", message: "Error: \(error.debugDescription)", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        self.SavePost.isEnabled = true
+                        self.removePhoto.isEnabled = true
+                        self.UploadPhoto.isEnabled = true
+                        self.DeletePost.isEnabled = true
+                        self.spinner.isHidden = true;
+                        self.spinner.stopAnimating();
+                    }else {
+                        // removed from storage
+                        Model.instance.add(post: NewPost);
+                        self.navigationController?.popViewController(animated: true);
+                        self.spinner.stopAnimating();
+                        self.spinner.isHidden = true;
+                        return;
+                    }
+                };
+            }
             self.spinner.stopAnimating();
             self.spinner.isHidden = true;
-            return;
+            self.navigationController?.popViewController(animated: true);
+            return
         }
         //if there is an image for this post
         Model.instance.saveImage(image: selectedImage, postId: NewPost.id) { (url) in
@@ -169,6 +199,7 @@ class InfoViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             self.spinner.isHidden = true;
             self.navigationController?.popViewController(animated: true);
         }
+        
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

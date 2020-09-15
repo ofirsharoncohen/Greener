@@ -44,9 +44,9 @@ class Model {
                         if post.lastUpdate! > lud {lud = post.lastUpdate!}
                     }
                 }
-                //update the students local last update date
+                //update the posts local last update date
                 Post.setLastUpdate(lastUpdated: lud)
-                // get the complete student list
+                // get the complete posts list
                 let finalData = Post.getAllPostsFromDb()
                 callback(finalData);
                 //
@@ -69,9 +69,9 @@ class Model {
                         if post.lastUpdate! > lud {lud = post.lastUpdate!}
                     }
                 }
-                //update the students local last update date
+                //update the posts local last update date
                 Post.setLastUpdate(lastUpdated: lud)
-                // get the complete student list
+                // get the complete posts list
                 let finalData = Post.getMyPostsFromDb(userId: userId)
                 callback(finalData);
                 //
@@ -82,7 +82,9 @@ class Model {
     func saveImage(image:UIImage, postId: String, callback:@escaping (String)->Void) {
         FirebaseStorage.saveImage(image: image,postId: postId, callback: callback)
     }
-    
+    func removeImageFromStorage(post: String, callback: @escaping (String)->Void){
+        FirebaseStorage.deleteImage(postId: post, callback: callback)
+    }
 }
 class ModelEvents{
     static let PostDataEvent = EventNotificationBase(eventName: "Greener.PostDataEvent");
